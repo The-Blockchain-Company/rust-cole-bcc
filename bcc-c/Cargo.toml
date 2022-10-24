@@ -1,0 +1,19 @@
+[package]
+name = "bcc-c"
+version = "0.1.0"
+authors = ["Robert Mourey Jr <rmourey_jr@blockchain-company.io>", "Original Authors Vincent Hanquez and Nicolas Di Prima of IOHK"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/the-blockchain-company/rust-bcc"
+homepage = "https://github.com/the-blockchain-company/rust-bcc/hermes#README.md"
+description = """
+Exports simple API to use in C library or to write bindings in
+other languages.
+"""
+
+[lib]
+crate-type = ["staticlib" ]
+
+[dependencies]
+bcc = { path = "../bcc" }
+cbor_event = "^2.1.1"

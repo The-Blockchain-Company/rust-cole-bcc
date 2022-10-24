@@ -1,0 +1,116 @@
+BCC_RUST_H	bcc.h	4;"	d
+_cardano_result	bcc.h	/^typedef enum _cardano_result {$/;"	g
+BCC_RESULT_SUCCESS	bcc.h	/^    BCC_RESULT_SUCCESS = 0,$/;"	e	enum:_cardano_result
+BCC_RESULT_ERROR	bcc.h	/^    BCC_RESULT_ERROR = 1$/;"	e	enum:_cardano_result
+cardano_result	bcc.h	/^} cardano_result;$/;"	t	typeref:enum:_cardano_result
+_bip39_config_error	bcc.h	/^typedef enum _bip39_config_error$/;"	g
+BIP39_SUCCESS	bcc.h	/^    BIP39_SUCCESS = 0,$/;"	e	enum:_bip39_config_error
+BIP39_INVALID_MNEMONIC	bcc.h	/^    BIP39_INVALID_MNEMONIC = 1,$/;"	e	enum:_bip39_config_error
+BIP39_INVALID_CHECKSUM	bcc.h	/^    BIP39_INVALID_CHECKSUM = 2,$/;"	e	enum:_bip39_config_error
+BIP39_INVALID_WORD_COUNT	bcc.h	/^    BIP39_INVALID_WORD_COUNT = 3$/;"	e	enum:_bip39_config_error
+cardano_bip39_error_t	bcc.h	/^} cardano_bip39_error_t;$/;"	t	typeref:enum:_bip39_config_error
+cardano_entropy	bcc.h	/^typedef uint8_t* cardano_entropy;$/;"	t
+cardano_entropy_from_english_mnemonics	bcc.h	/^cardano_bip39_error_t cardano_entropy_from_english_mnemonics($/;"	p
+cardano_entropy_from_random	bcc.h	/^cardano_bip39_error_t cardano_entropy_from_random($/;"	p
+cardano_delete_entropy_array	bcc.h	/^void cardano_delete_entropy_array(uint8_t *entropy, uint32_t entropy_size);$/;"	p
+cardano_bip39_encode	bcc.h	/^cardano_result cardano_bip39_encode(const char * const entropy_raw, unsigned long entropy_size, unsigned short *mnemonic_index, unsigned long mnemonic_size);$/;"	p
+XPRV_SIZE	bcc.h	94;"	d
+cardano_xprv	bcc.h	/^typedef struct cardano_xprv cardano_xprv;$/;"	t	typeref:struct:cardano_xprv
+cardano_xpub	bcc.h	/^typedef struct cardano_xpub cardano_xpub;$/;"	t	typeref:struct:cardano_xpub
+cardano_xprv_derive	bcc.h	/^cardano_xprv *cardano_xprv_derive(cardano_xprv *xprv, uint32_t index); $/;"	p
+cardano_xprv_delete	bcc.h	/^void cardano_xprv_delete(cardano_xprv *privkey);$/;"	p
+cardano_xprv_to_xpub	bcc.h	/^cardano_xpub *cardano_xprv_to_xpub(cardano_xprv *privkey);$/;"	p
+cardano_xprv_to_bytes	bcc.h	/^uint8_t *cardano_xprv_to_bytes(cardano_xprv *privkey);$/;"	p
+cardano_xprv_bytes_delete	bcc.h	/^void cardano_xprv_bytes_delete(uint8_t  *bytes);$/;"	p
+cardano_xprv_from_bytes	bcc.h	/^cardano_result cardano_xprv_from_bytes(uint8_t *bytes, cardano_xprv **xprv_out);$/;"	p
+cardano_xpub_delete	bcc.h	/^void cardano_xpub_delete(cardano_xpub *pubkey);$/;"	p
+cardano_address	bcc.h	/^typedef struct cardano_address cardano_address;$/;"	t	typeref:struct:cardano_address
+cardano_address_is_valid	bcc.h	/^int cardano_address_is_valid(const char * address_base58);$/;"	p
+cardano_address_new_from_pubkey	bcc.h	/^cardano_address *cardano_address_new_from_pubkey(cardano_xpub *publickey);$/;"	p
+cardano_address_delete	bcc.h	/^void cardano_address_delete(cardano_address *address);$/;"	p
+cardano_address_export_base58	bcc.h	/^char *cardano_address_export_base58(cardano_address *address);$/;"	p
+cardano_address_import_base58	bcc.h	/^cardano_address *cardano_address_import_base58(const char * address_bytes);$/;"	p
+cardano_wallet	bcc.h	/^typedef struct cardano_wallet cardano_wallet;$/;"	t	typeref:struct:cardano_wallet
+cardano_account	bcc.h	/^typedef struct cardano_account cardano_account;$/;"	t	typeref:struct:cardano_account
+cardano_wallet_new	bcc.h	/^cardano_result cardano_wallet_new(const uint8_t * const entropy_ptr, unsigned long entropy_size,$/;"	p
+cardano_wallet_delete	bcc.h	/^void cardano_wallet_delete(cardano_wallet *);$/;"	p
+cardano_wallet_root_key	bcc.h	/^cardano_xprv *cardano_wallet_root_key(cardano_wallet *wallet_ptr);$/;"	p
+cardano_account_create	bcc.h	/^cardano_account *cardano_account_create(cardano_wallet *wallet, const char *alias, unsigned int index);$/;"	p
+cardano_account_delete	bcc.h	/^void cardano_account_delete(cardano_account *account);$/;"	p
+cardano_account_generate_addresses	bcc.h	/^unsigned long cardano_account_generate_addresses(cardano_account *account, int internal, unsigned int from_index, unsigned long num_indices, char *addresses_ptr[], uint32_t protocol_magic);$/;"	p
+cardano_account_delete_addresses	bcc.h	/^void cardano_account_delete_addresses(char *addresses_ptr[], unsigned long length);$/;"	p
+_transaction_config_error	bcc.h	/^typedef enum _transaction_config_error$/;"	g
+BCC_TRANSACTION_SUCCESS	bcc.h	/^    BCC_TRANSACTION_SUCCESS = 0,$/;"	e	enum:_transaction_config_error
+BCC_TRANSACTION_NO_OUTPUT	bcc.h	/^    BCC_TRANSACTION_NO_OUTPUT = 1,$/;"	e	enum:_transaction_config_error
+BCC_TRANSACTION_NO_INPUT	bcc.h	/^    BCC_TRANSACTION_NO_INPUT = 2,$/;"	e	enum:_transaction_config_error
+BCC_TRANSACTION_SIGNATURE_MISMATCH	bcc.h	/^    BCC_TRANSACTION_SIGNATURE_MISMATCH = 3,$/;"	e	enum:_transaction_config_error
+BCC_TRANSACTION_OVER_LIMIT	bcc.h	/^    BCC_TRANSACTION_OVER_LIMIT = 4,$/;"	e	enum:_transaction_config_error
+BCC_TRANSACTION_SIGNATURES_EXCEEDED	bcc.h	/^    BCC_TRANSACTION_SIGNATURES_EXCEEDED = 5,$/;"	e	enum:_transaction_config_error
+BCC_TRANSACTION_COIN_OUT_OF_BOUNDS	bcc.h	/^    BCC_TRANSACTION_COIN_OUT_OF_BOUNDS = 6,$/;"	e	enum:_transaction_config_error
+cardano_transaction_error_t	bcc.h	/^} cardano_transaction_error_t;$/;"	t	typeref:enum:_transaction_config_error
+cardano_transaction_builder	bcc.h	/^typedef struct cardano_transaction_builder cardano_transaction_builder;$/;"	t	typeref:struct:cardano_transaction_builder
+cardano_transaction_finalized	bcc.h	/^typedef struct cardano_transaction_finalized cardano_transaction_finalized;$/;"	t	typeref:struct:cardano_transaction_finalized
+cardano_txoptr	bcc.h	/^typedef struct cardano_txoptr cardano_txoptr;$/;"	t	typeref:struct:cardano_txoptr
+cardano_txoutput	bcc.h	/^typedef struct cardano_txoutput cardano_txoutput;$/;"	t	typeref:struct:cardano_txoutput
+cardano_transaction	bcc.h	/^typedef struct cardano_transaction cardano_transaction;$/;"	t	typeref:struct:cardano_transaction
+cardano_signed_transaction	bcc.h	/^typedef struct cardano_signed_transaction cardano_signed_transaction;$/;"	t	typeref:struct:cardano_signed_transaction
+cardano_txid	bcc.h	/^typedef struct cardano_txid {$/;"	s
+bytes	bcc.h	/^    uint8_t bytes[32];$/;"	m	struct:cardano_txid
+cardano_txid_t	bcc.h	/^} cardano_txid_t;$/;"	t	typeref:struct:cardano_txid
+cardano_signed_transaction_txid	bcc.h	/^void cardano_signed_transaction_txid($/;"	p
+cardano_transaction_txid	bcc.h	/^void cardano_transaction_txid($/;"	p
+cardano_signed_transaction_get_inputs	bcc.h	/^void cardano_signed_transaction_get_inputs($/;"	p
+cardano_signed_transaction_delete_inputs	bcc.h	/^void cardano_signed_transaction_delete_inputs(cardano_txoptr *inputs[], size_t size);$/;"	p
+cardano_signed_transaction_get_outputs	bcc.h	/^void cardano_signed_transaction_get_outputs($/;"	p
+cardano_signed_transaction_serialize	bcc.h	/^cardano_result cardano_signed_transaction_serialize($/;"	p
+cardano_signed_transaction_serialized_delete	bcc.h	/^void cardano_signed_transaction_serialized_delete(uint8_t *pointer, size_t size);$/;"	p
+cardano_signed_transaction_delete_outputs	bcc.h	/^void cardano_signed_transaction_delete_outputs(cardano_txoutput *outputs[], size_t size);$/;"	p
+cardano_transaction_output_ptr_new	bcc.h	/^cardano_txoptr * cardano_transaction_output_ptr_new(uint8_t txid[32], uint32_t index);$/;"	p
+cardano_transaction_output_ptr_delete	bcc.h	/^void cardano_transaction_output_ptr_delete(cardano_txoptr *txo);$/;"	p
+cardano_transaction_txoptr_txid	bcc.h	/^void cardano_transaction_txoptr_txid(cardano_txoptr *txoptr, cardano_txid_t *output);$/;"	p
+cardano_transaction_txoptr_index	bcc.h	/^uint32_t cardano_transaction_txoptr_index(cardano_txoptr *txoptr);$/;"	p
+cardano_transaction_output_new	bcc.h	/^cardano_txoutput * cardano_transaction_output_new(cardano_address *c_addr, uint64_t value);$/;"	p
+cardano_transaction_output_delete	bcc.h	/^void cardano_transaction_output_delete(cardano_txoutput *output);$/;"	p
+cardano_transaction_txoutput_address	bcc.h	/^cardano_address *cardano_transaction_txoutput_address(cardano_txoutput *txoutput);$/;"	p
+cardano_transaction_txoutput_value	bcc.h	/^uint64_t cardano_transaction_txoutput_value(cardano_txoutput *txoutput);$/;"	p
+cardano_transaction_builder_new	bcc.h	/^cardano_transaction_builder * cardano_transaction_builder_new(void);$/;"	p
+cardano_transaction_builder_delete	bcc.h	/^void cardano_transaction_builder_delete(cardano_transaction_builder *tb);$/;"	p
+cardano_transaction_builder_add_output	bcc.h	/^void cardano_transaction_builder_add_output(cardano_transaction_builder *tb, cardano_txoutput *txo);$/;"	p
+cardano_transaction_builder_add_input	bcc.h	/^cardano_transaction_error_t cardano_transaction_builder_add_input(cardano_transaction_builder *tb, cardano_txoptr *c_txo, uint64_t value);$/;"	p
+cardano_transaction_builder_add_change_addr	bcc.h	/^cardano_result cardano_transaction_builder_add_change_addr(cardano_transaction_builder *tb, cardano_address *change_addr);$/;"	p
+cardano_transaction_builder_fee	bcc.h	/^uint64_t cardano_transaction_builder_fee(cardano_transaction_builder *tb);$/;"	p
+difference_type	bcc.h	/^typedef enum difference_type {$/;"	g
+DIFF_POSITIVE	bcc.h	/^    DIFF_POSITIVE,$/;"	e	enum:difference_type
+DIFF_NEGATIVE	bcc.h	/^    DIFF_NEGATIVE,$/;"	e	enum:difference_type
+DIFF_ZERO	bcc.h	/^    DIFF_ZERO,$/;"	e	enum:difference_type
+difference_type_t	bcc.h	/^} difference_type_t;$/;"	t	typeref:enum:difference_type
+cardano_transaction_coin_diff	bcc.h	/^typedef struct cardano_transaction_coin_diff {$/;"	s
+sign	bcc.h	/^    difference_type_t sign;$/;"	m	struct:cardano_transaction_coin_diff
+value	bcc.h	/^    uint64_t value;$/;"	m	struct:cardano_transaction_coin_diff
+cardano_transaction_coin_diff_t	bcc.h	/^} cardano_transaction_coin_diff_t;$/;"	t	typeref:struct:cardano_transaction_coin_diff
+cardano_transaction_balance_delete	bcc.h	/^void cardano_transaction_balance_delete(cardano_transaction_coin_diff_t *balance);$/;"	p
+cardano_transaction_builder_balance	bcc.h	/^cardano_transaction_error_t cardano_transaction_builder_balance(cardano_transaction_builder *tb, cardano_transaction_coin_diff_t **out);$/;"	p
+cardano_transaction_builder_balance_without_fees	bcc.h	/^cardano_transaction_error_t cardano_transaction_builder_balance_without_fees(cardano_transaction_builder *tb, cardano_transaction_coin_diff_t **out);$/;"	p
+cardano_transaction_builder_get_input_total	bcc.h	/^cardano_transaction_error_t cardano_transaction_builder_get_input_total(cardano_transaction_builder *tb, uint64_t *output);$/;"	p
+cardano_transaction_builder_get_output_total	bcc.h	/^cardano_transaction_error_t cardano_transaction_builder_get_output_total(cardano_transaction_builder *tb, uint64_t *output);$/;"	p
+cardano_transaction_builder_finalize	bcc.h	/^cardano_transaction_error_t cardano_transaction_builder_finalize(cardano_transaction_builder *tb, cardano_transaction **tx);$/;"	p
+cardano_transaction_delete	bcc.h	/^void cardano_transaction_delete(cardano_transaction *c_tx);$/;"	p
+cardano_transaction_finalized_new	bcc.h	/^cardano_transaction_finalized * cardano_transaction_finalized_new(cardano_transaction *c_tx);$/;"	p
+cardano_transaction_finalized_delete	bcc.h	/^void cardano_transaction_finalized_delete(cardano_transaction_finalized *tf);$/;"	p
+cardano_transaction_finalized_add_witness	bcc.h	/^cardano_transaction_error_t cardano_transaction_finalized_add_witness(cardano_transaction_finalized *tf, uint8_t c_xprv[96], uint32_t protocol_magic, uint8_t c_txid[32]);$/;"	p
+cardano_transaction_finalized_output	bcc.h	/^cardano_transaction_error_t cardano_transaction_finalized_output(cardano_transaction_finalized *tf, cardano_signed_transaction **txaux);$/;"	p
+cardano_transaction_signed_delete	bcc.h	/^void cardano_transaction_signed_delete(cardano_signed_transaction *txaux);$/;"	p
+cardano_block	bcc.h	/^typedef struct cardano_block cardano_block;$/;"	t	typeref:struct:cardano_block
+cardano_raw_block_decode	bcc.h	/^cardano_result cardano_raw_block_decode(const uint8_t *bytes, size_t size, cardano_block **out_block);$/;"	p
+cardano_block_delete	bcc.h	/^void cardano_block_delete(cardano_block *block);$/;"	p
+cardano_block_get_transactions	bcc.h	/^cardano_result cardano_block_get_transactions($/;"	p
+cardano_block_delete_transactions	bcc.h	/^void cardano_block_delete_transactions($/;"	p
+cardano_block_header	bcc.h	/^typedef struct cardano_block_header cardano_block_header;$/;"	t	typeref:struct:cardano_block_header
+cardano_block_get_header	bcc.h	/^cardano_block_header *cardano_block_get_header(cardano_block *block);$/;"	p
+cardano_raw_block_header_decode	bcc.h	/^cardano_result cardano_raw_block_header_decode($/;"	p
+cardano_block_header_previous_hash	bcc.h	/^char *cardano_block_header_previous_hash(cardano_block_header *header);$/;"	p
+cardano_block_header_compute_hash	bcc.h	/^char *cardano_block_header_compute_hash(cardano_block_header *header);$/;"	p
+cardano_block_delete_hash	bcc.h	/^void cardano_block_delete_hash(char *hash);$/;"	p
+cardano_block_header_delete	bcc.h	/^void cardano_block_header_delete(cardano_block_header *header);$/;"	p
+install_lib	build.sh	/^install_lib() {$/;"	f
+rustup_target_add	build.sh	/^rustup_target_add() {$/;"	f

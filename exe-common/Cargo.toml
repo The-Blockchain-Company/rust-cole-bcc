@@ -1,0 +1,35 @@
+[package]
+name = "exe-common"
+version = "0.1.0"
+authors = ["Robert Mourey Jr <rmourey_jr@blockchain-company.io>", "Original Authors Vincent Hanquez and Nicolas Di Prima of IOHK"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/the-blockchain-company/rust-bcc"
+homepage = "https://github.com/the-blockchain-company/rust-bcc/exe-common#README.md"
+description = """
+Helpers and tools for the Bcc protocol. This includes keeping the blockchain synced and storing the blockchain locally.
+"""
+
+[dependencies]
+bcc-storage = { path = "../storage" }
+storage-units = { path = "../storage-units" }
+protocol = { path = "../protocol" }
+cbor_event = "2.1.2"
+log = "*"
+rand = "0.6"
+serde = "1.0"
+serde_derive = "1.0"
+serde_yaml = "0.7"
+serde_json = "1.0"
+base64 = "0.9"
+network-ntt = { path = "../network-ntt" }
+network-core = { path = "../network-core" }
+
+futures = "0.1"
+hyper = "0.11"
+tokio = "0.1.15"
+tokio-core = "0.1.15"
+
+[dependencies.bcc]
+path = "../bcc"
+features = [ "generic-serialization" ]

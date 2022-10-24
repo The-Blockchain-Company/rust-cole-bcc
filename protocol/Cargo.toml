@@ -1,0 +1,24 @@
+[package]
+name = "protocol"
+version = "0.1.0"
+authors = ["Robert Mourey Jr <rmourey_jr@blockchain-company.io>", "Original Authors Vincent Hanquez and Nicolas Di Prima of IOHK"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/the-blockchain-company/rust-bcc"
+homepage = "https://github.com/the-blockchain-company/rust-bcc/protocol#README.md"
+description = """
+Bcc network protocol. Provides implementation to fetch blocks from a remote
+node and to send transactions to a remote node.
+"""
+keywords = [ "Bcc", "Protocol" ]
+
+[build-dependencies]
+
+[dependencies]
+cbor_event = "^2.1.2"
+bcc = { path = "../bcc" }
+log = "0.4"
+
+[dev-dependencies]
+rand = "0.6"
+env_logger = "*"

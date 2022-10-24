@@ -1,0 +1,6 @@
+CC	Makefile	/^CC=gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-I.$/;"	m
+LIB	Makefile	/^LIB = ..\/..\/target\/debug\/libbcc_c.a$/;"	m
+PROTOCOL_MAGIC	signed_transaction.c	/^static const uint32_t PROTOCOL_MAGIC = 1097911063;$/;"	v	file:
+BIP44_SOFT_UPPER_BOUND	signed_transaction.c	/^const uint32_t BIP44_SOFT_UPPER_BOUND = 0x80000000;$/;"	v
+main	signed_transaction.c	/^int main(int argc, char *argv)$/;"	f

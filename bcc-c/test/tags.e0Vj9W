@@ -1,0 +1,62 @@
+static_wallet_entropy	test.c	/^static const uint8_t static_wallet_entropy[16] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};$/;"	v	file:
+test_can_create_address	test.c	/^void test_can_create_address(void)$/;"	f
+invalid_entropy_size_returns_failure	test.c	/^void invalid_entropy_size_returns_failure()$/;"	f
+valid_entropy_size_returns_success	test.c	/^void valid_entropy_size_returns_success()$/;"	f
+main	test.c	/^int main(void)$/;"	f
+test_generate_entropy_from_mnemonics	test_bip39_entropy.c	/^void test_generate_entropy_from_mnemonics(void) {$/;"	f
+test_generate_entropy_from_mnemonics_error_code_invalid_word	test_bip39_entropy.c	/^void test_generate_entropy_from_mnemonics_error_code_invalid_word(void) {$/;"	f
+test_generate_entropy_from_mnemonics_invalid_checksum	test_bip39_entropy.c	/^void test_generate_entropy_from_mnemonics_invalid_checksum(void) {$/;"	f
+gen	test_bip39_entropy.c	/^uint8_t gen() {$/;"	f
+test_generate_entropy_from_random_generator	test_bip39_entropy.c	/^void test_generate_entropy_from_random_generator(void) {$/;"	f
+test_generate_entropy_from_random_generator_word_count_error	test_bip39_entropy.c	/^void test_generate_entropy_from_random_generator_word_count_error(void) {$/;"	f
+main	test_bip39_entropy.c	/^int main(void) {$/;"	f
+wallet	test_transaction.c	/^cardano_wallet *wallet;$/;"	v
+account	test_transaction.c	/^cardano_account *account;$/;"	v
+input_address	test_transaction.c	/^cardano_address *input_address;$/;"	v
+output_address	test_transaction.c	/^cardano_address *output_address;$/;"	v
+txbuilder	test_transaction.c	/^cardano_transaction_builder *txbuilder;$/;"	v
+input	test_transaction.c	/^cardano_txoptr *input;$/;"	v
+output	test_transaction.c	/^cardano_txoutput *output;$/;"	v
+PROTOCOL_MAGIC	test_transaction.c	/^static uint32_t PROTOCOL_MAGIC = 1;$/;"	v	file:
+input_xprv	test_transaction.c	/^static uint8_t input_xprv[XPRV_SIZE] = {0};$/;"	v	file:
+static_wallet_entropy	test_transaction.c	/^static const uint8_t static_wallet_entropy[16] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};$/;"	v	file:
+txid	test_transaction.c	/^static uint8_t txid[32] = {0};$/;"	v	file:
+MAX_COIN	test_transaction.c	/^const uint64_t MAX_COIN = 45000000000000000;$/;"	v
+setUp	test_transaction.c	/^void setUp()$/;"	f
+tearDown	test_transaction.c	/^void tearDown()$/;"	f
+test_add_input_returns_success_with_valid_value	test_transaction.c	/^void test_add_input_returns_success_with_valid_value()$/;"	f
+test_add_input_returns_error_with_big_value	test_transaction.c	/^void test_add_input_returns_error_with_big_value()$/;"	f
+test_add_witness_returns_error_with_less_inputs	test_transaction.c	/^void test_add_witness_returns_error_with_less_inputs()$/;"	f
+test_builder_finalize_error_code_no_inputs	test_transaction.c	/^void test_builder_finalize_error_code_no_inputs()$/;"	f
+test_builder_finalize_error_code_no_outputs	test_transaction.c	/^void test_builder_finalize_error_code_no_outputs()$/;"	f
+test_transaction_finalized_output_error_code_signature_mismatch	test_transaction.c	/^void test_transaction_finalized_output_error_code_signature_mismatch()$/;"	f
+test_transaction_finalized_output_success	test_transaction.c	/^void test_transaction_finalized_output_success()$/;"	f
+test_transaction_balance_positive	test_transaction.c	/^void test_transaction_balance_positive() {$/;"	f
+test_transaction_balance_negative	test_transaction.c	/^void test_transaction_balance_negative() {$/;"	f
+test_transaction_balance_zero	test_transaction.c	/^void test_transaction_balance_zero() {$/;"	f
+test_transaction_builder_balance_too_big	test_transaction.c	/^void test_transaction_builder_balance_too_big() {$/;"	f
+test_transaction_builder_balance_without_fee_too_big	test_transaction.c	/^void test_transaction_builder_balance_without_fee_too_big() {$/;"	f
+test_transaction_balance_without_fee_positive	test_transaction.c	/^void test_transaction_balance_without_fee_positive() {$/;"	f
+test_transaction_balance_without_fee_negative	test_transaction.c	/^void test_transaction_balance_without_fee_negative() {$/;"	f
+test_transaction_balance_without_fee_zero	test_transaction.c	/^void test_transaction_balance_without_fee_zero() {$/;"	f
+test_transaction_get_input_total	test_transaction.c	/^void test_transaction_get_input_total() {$/;"	f
+test_transaction_get_output_total	test_transaction.c	/^void test_transaction_get_output_total() {$/;"	f
+test_transaction_get_input_total_no_inputs	test_transaction.c	/^void test_transaction_get_input_total_no_inputs() {$/;"	f
+test_transaction_get_output_total_no_outputs	test_transaction.c	/^void test_transaction_get_output_total_no_outputs() {$/;"	f
+test_transaction_get_input_total_too_big	test_transaction.c	/^void test_transaction_get_input_total_too_big()$/;"	f
+test_transaction_get_output_total_too_big	test_transaction.c	/^void test_transaction_get_output_total_too_big()$/;"	f
+test_transaction_finalized_serialize	test_transaction.c	/^void test_transaction_finalized_serialize()$/;"	f
+main	test_transaction.c	/^int main(void)$/;"	f
+can_serialize_xprv	test_xprv.c	/^void can_serialize_xprv(void)$/;"	f
+xprv_from_invalid_bytes_returns_failure	test_xprv.c	/^void xprv_from_invalid_bytes_returns_failure()$/;"	f
+xprv_from_valid_bytes_returns_success	test_xprv.c	/^void xprv_from_valid_bytes_returns_success()$/;"	f
+main	test_xprv.c	/^int main(void)$/;"	f
+RAW_BLOCK	test_block.c	/^const uint8_t RAW_BLOCK[] = {$/;"	v
+test_can_deserialize_block	test_block.c	/^void test_can_deserialize_block()$/;"	f
+test_get_transactions	test_block.c	/^void test_get_transactions()$/;"	f
+test_get_inputs	test_block.c	/^void test_get_inputs()$/;"	f
+test_get_outputs	test_block.c	/^void test_get_outputs()$/;"	f
+test_get_header	test_block.c	/^void test_get_header()$/;"	f
+test_decode_raw_header	test_block.c	/^void test_decode_raw_header()$/;"	f
+test_transaction_signed_id	test_block.c	/^void test_transaction_signed_id()$/;"	f
+main	test_block.c	/^int main(void)$/;"	f

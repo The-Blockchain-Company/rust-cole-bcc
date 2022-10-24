@@ -1,0 +1,116 @@
+install_lib	build.sh	/^install_lib() {$/;"	f
+rustup_target_add	build.sh	/^rustup_target_add() {$/;"	f
+BCC_RUST_H	bcc.h	4;"	d
+_bcc_result	bcc.h	/^typedef enum _bcc_result {$/;"	g
+BCC_RESULT_SUCCESS	bcc.h	/^    BCC_RESULT_SUCCESS = 0,$/;"	e	enum:_bcc_result
+BCC_RESULT_ERROR	bcc.h	/^    BCC_RESULT_ERROR = 1$/;"	e	enum:_bcc_result
+bcc_result	bcc.h	/^} bcc_result;$/;"	t	typeref:enum:_bcc_result
+_bip39_config_error	bcc.h	/^typedef enum _bip39_config_error$/;"	g
+BIP39_SUCCESS	bcc.h	/^    BIP39_SUCCESS = 0,$/;"	e	enum:_bip39_config_error
+BIP39_INVALID_MNEMONIC	bcc.h	/^    BIP39_INVALID_MNEMONIC = 1,$/;"	e	enum:_bip39_config_error
+BIP39_INVALID_CHECKSUM	bcc.h	/^    BIP39_INVALID_CHECKSUM = 2,$/;"	e	enum:_bip39_config_error
+BIP39_INVALID_WORD_COUNT	bcc.h	/^    BIP39_INVALID_WORD_COUNT = 3$/;"	e	enum:_bip39_config_error
+bcc_bip39_error_t	bcc.h	/^} bcc_bip39_error_t;$/;"	t	typeref:enum:_bip39_config_error
+bcc_entropy	bcc.h	/^typedef uint8_t* bcc_entropy;$/;"	t
+bcc_entropy_from_english_mnemonics	bcc.h	/^bcc_bip39_error_t bcc_entropy_from_english_mnemonics($/;"	p
+bcc_entropy_from_random	bcc.h	/^bcc_bip39_error_t bcc_entropy_from_random($/;"	p
+bcc_delete_entropy_array	bcc.h	/^void bcc_delete_entropy_array(uint8_t *entropy, uint32_t entropy_size);$/;"	p
+bcc_bip39_encode	bcc.h	/^bcc_result bcc_bip39_encode(const char * const entropy_raw, unsigned long entropy_size, unsigned short *mnemonic_index, unsigned long mnemonic_size);$/;"	p
+XPRV_SIZE	bcc.h	94;"	d
+bcc_xprv	bcc.h	/^typedef struct bcc_xprv bcc_xprv;$/;"	t	typeref:struct:bcc_xprv
+bcc_xpub	bcc.h	/^typedef struct bcc_xpub bcc_xpub;$/;"	t	typeref:struct:bcc_xpub
+bcc_xprv_derive	bcc.h	/^bcc_xprv *bcc_xprv_derive(bcc_xprv *xprv, uint32_t index); $/;"	p
+bcc_xprv_delete	bcc.h	/^void bcc_xprv_delete(bcc_xprv *privkey);$/;"	p
+bcc_xprv_to_xpub	bcc.h	/^bcc_xpub *bcc_xprv_to_xpub(bcc_xprv *privkey);$/;"	p
+bcc_xprv_to_bytes	bcc.h	/^uint8_t *bcc_xprv_to_bytes(bcc_xprv *privkey);$/;"	p
+bcc_xprv_bytes_delete	bcc.h	/^void bcc_xprv_bytes_delete(uint8_t  *bytes);$/;"	p
+bcc_xprv_from_bytes	bcc.h	/^bcc_result bcc_xprv_from_bytes(uint8_t *bytes, bcc_xprv **xprv_out);$/;"	p
+bcc_xpub_delete	bcc.h	/^void bcc_xpub_delete(bcc_xpub *pubkey);$/;"	p
+bcc_address	bcc.h	/^typedef struct bcc_address bcc_address;$/;"	t	typeref:struct:bcc_address
+bcc_address_is_valid	bcc.h	/^int bcc_address_is_valid(const char * address_base58);$/;"	p
+bcc_address_new_from_pubkey	bcc.h	/^bcc_address *bcc_address_new_from_pubkey(bcc_xpub *publickey);$/;"	p
+bcc_address_delete	bcc.h	/^void bcc_address_delete(bcc_address *address);$/;"	p
+bcc_address_export_base58	bcc.h	/^char *bcc_address_export_base58(bcc_address *address);$/;"	p
+bcc_address_import_base58	bcc.h	/^bcc_address *bcc_address_import_base58(const char * address_bytes);$/;"	p
+bcc_wallet	bcc.h	/^typedef struct bcc_wallet bcc_wallet;$/;"	t	typeref:struct:bcc_wallet
+bcc_account	bcc.h	/^typedef struct bcc_account bcc_account;$/;"	t	typeref:struct:bcc_account
+bcc_wallet_new	bcc.h	/^bcc_result bcc_wallet_new(const uint8_t * const entropy_ptr, unsigned long entropy_size,$/;"	p
+bcc_wallet_delete	bcc.h	/^void bcc_wallet_delete(bcc_wallet *);$/;"	p
+bcc_wallet_root_key	bcc.h	/^bcc_xprv *bcc_wallet_root_key(bcc_wallet *wallet_ptr);$/;"	p
+bcc_account_create	bcc.h	/^bcc_account *bcc_account_create(bcc_wallet *wallet, const char *alias, unsigned int index);$/;"	p
+bcc_account_delete	bcc.h	/^void bcc_account_delete(bcc_account *account);$/;"	p
+bcc_account_generate_addresses	bcc.h	/^unsigned long bcc_account_generate_addresses(bcc_account *account, int internal, unsigned int from_index, unsigned long num_indices, char *addresses_ptr[], uint32_t protocol_magic);$/;"	p
+bcc_account_delete_addresses	bcc.h	/^void bcc_account_delete_addresses(char *addresses_ptr[], unsigned long length);$/;"	p
+_transaction_config_error	bcc.h	/^typedef enum _transaction_config_error$/;"	g
+BCC_TRANSACTION_SUCCESS	bcc.h	/^    BCC_TRANSACTION_SUCCESS = 0,$/;"	e	enum:_transaction_config_error
+BCC_TRANSACTION_NO_OUTPUT	bcc.h	/^    BCC_TRANSACTION_NO_OUTPUT = 1,$/;"	e	enum:_transaction_config_error
+BCC_TRANSACTION_NO_INPUT	bcc.h	/^    BCC_TRANSACTION_NO_INPUT = 2,$/;"	e	enum:_transaction_config_error
+BCC_TRANSACTION_SIGNATURE_MISMATCH	bcc.h	/^    BCC_TRANSACTION_SIGNATURE_MISMATCH = 3,$/;"	e	enum:_transaction_config_error
+BCC_TRANSACTION_OVER_LIMIT	bcc.h	/^    BCC_TRANSACTION_OVER_LIMIT = 4,$/;"	e	enum:_transaction_config_error
+BCC_TRANSACTION_SIGNATURES_EXCEEDED	bcc.h	/^    BCC_TRANSACTION_SIGNATURES_EXCEEDED = 5,$/;"	e	enum:_transaction_config_error
+BCC_TRANSACTION_COIN_OUT_OF_BOUNDS	bcc.h	/^    BCC_TRANSACTION_COIN_OUT_OF_BOUNDS = 6,$/;"	e	enum:_transaction_config_error
+bcc_transaction_error_t	bcc.h	/^} bcc_transaction_error_t;$/;"	t	typeref:enum:_transaction_config_error
+bcc_transaction_builder	bcc.h	/^typedef struct bcc_transaction_builder bcc_transaction_builder;$/;"	t	typeref:struct:bcc_transaction_builder
+bcc_transaction_finalized	bcc.h	/^typedef struct bcc_transaction_finalized bcc_transaction_finalized;$/;"	t	typeref:struct:bcc_transaction_finalized
+bcc_txoptr	bcc.h	/^typedef struct bcc_txoptr bcc_txoptr;$/;"	t	typeref:struct:bcc_txoptr
+bcc_txoutput	bcc.h	/^typedef struct bcc_txoutput bcc_txoutput;$/;"	t	typeref:struct:bcc_txoutput
+bcc_transaction	bcc.h	/^typedef struct bcc_transaction bcc_transaction;$/;"	t	typeref:struct:bcc_transaction
+bcc_signed_transaction	bcc.h	/^typedef struct bcc_signed_transaction bcc_signed_transaction;$/;"	t	typeref:struct:bcc_signed_transaction
+bcc_txid	bcc.h	/^typedef struct bcc_txid {$/;"	s
+bytes	bcc.h	/^    uint8_t bytes[32];$/;"	m	struct:bcc_txid
+bcc_txid_t	bcc.h	/^} bcc_txid_t;$/;"	t	typeref:struct:bcc_txid
+bcc_signed_transaction_txid	bcc.h	/^void bcc_signed_transaction_txid($/;"	p
+bcc_transaction_txid	bcc.h	/^void bcc_transaction_txid($/;"	p
+bcc_signed_transaction_get_inputs	bcc.h	/^void bcc_signed_transaction_get_inputs($/;"	p
+bcc_signed_transaction_delete_inputs	bcc.h	/^void bcc_signed_transaction_delete_inputs(bcc_txoptr *inputs[], size_t size);$/;"	p
+bcc_signed_transaction_get_outputs	bcc.h	/^void bcc_signed_transaction_get_outputs($/;"	p
+bcc_signed_transaction_serialize	bcc.h	/^bcc_result bcc_signed_transaction_serialize($/;"	p
+bcc_signed_transaction_serialized_delete	bcc.h	/^void bcc_signed_transaction_serialized_delete(uint8_t *pointer, size_t size);$/;"	p
+bcc_signed_transaction_delete_outputs	bcc.h	/^void bcc_signed_transaction_delete_outputs(bcc_txoutput *outputs[], size_t size);$/;"	p
+bcc_transaction_output_ptr_new	bcc.h	/^bcc_txoptr * bcc_transaction_output_ptr_new(uint8_t txid[32], uint32_t index);$/;"	p
+bcc_transaction_output_ptr_delete	bcc.h	/^void bcc_transaction_output_ptr_delete(bcc_txoptr *txo);$/;"	p
+bcc_transaction_txoptr_txid	bcc.h	/^void bcc_transaction_txoptr_txid(bcc_txoptr *txoptr, bcc_txid_t *output);$/;"	p
+bcc_transaction_txoptr_index	bcc.h	/^uint32_t bcc_transaction_txoptr_index(bcc_txoptr *txoptr);$/;"	p
+bcc_transaction_output_new	bcc.h	/^bcc_txoutput * bcc_transaction_output_new(bcc_address *c_addr, uint64_t value);$/;"	p
+bcc_transaction_output_delete	bcc.h	/^void bcc_transaction_output_delete(bcc_txoutput *output);$/;"	p
+bcc_transaction_txoutput_address	bcc.h	/^bcc_address *bcc_transaction_txoutput_address(bcc_txoutput *txoutput);$/;"	p
+bcc_transaction_txoutput_value	bcc.h	/^uint64_t bcc_transaction_txoutput_value(bcc_txoutput *txoutput);$/;"	p
+bcc_transaction_builder_new	bcc.h	/^bcc_transaction_builder * bcc_transaction_builder_new(void);$/;"	p
+bcc_transaction_builder_delete	bcc.h	/^void bcc_transaction_builder_delete(bcc_transaction_builder *tb);$/;"	p
+bcc_transaction_builder_add_output	bcc.h	/^void bcc_transaction_builder_add_output(bcc_transaction_builder *tb, bcc_txoutput *txo);$/;"	p
+bcc_transaction_builder_add_input	bcc.h	/^bcc_transaction_error_t bcc_transaction_builder_add_input(bcc_transaction_builder *tb, bcc_txoptr *c_txo, uint64_t value);$/;"	p
+bcc_transaction_builder_add_change_addr	bcc.h	/^bcc_result bcc_transaction_builder_add_change_addr(bcc_transaction_builder *tb, bcc_address *change_addr);$/;"	p
+bcc_transaction_builder_fee	bcc.h	/^uint64_t bcc_transaction_builder_fee(bcc_transaction_builder *tb);$/;"	p
+difference_type	bcc.h	/^typedef enum difference_type {$/;"	g
+DIFF_POSITIVE	bcc.h	/^    DIFF_POSITIVE,$/;"	e	enum:difference_type
+DIFF_NEGATIVE	bcc.h	/^    DIFF_NEGATIVE,$/;"	e	enum:difference_type
+DIFF_ZERO	bcc.h	/^    DIFF_ZERO,$/;"	e	enum:difference_type
+difference_type_t	bcc.h	/^} difference_type_t;$/;"	t	typeref:enum:difference_type
+bcc_transaction_coin_diff	bcc.h	/^typedef struct bcc_transaction_coin_diff {$/;"	s
+sign	bcc.h	/^    difference_type_t sign;$/;"	m	struct:bcc_transaction_coin_diff
+value	bcc.h	/^    uint64_t value;$/;"	m	struct:bcc_transaction_coin_diff
+bcc_transaction_coin_diff_t	bcc.h	/^} bcc_transaction_coin_diff_t;$/;"	t	typeref:struct:bcc_transaction_coin_diff
+bcc_transaction_balance_delete	bcc.h	/^void bcc_transaction_balance_delete(bcc_transaction_coin_diff_t *balance);$/;"	p
+bcc_transaction_builder_balance	bcc.h	/^bcc_transaction_error_t bcc_transaction_builder_balance(bcc_transaction_builder *tb, bcc_transaction_coin_diff_t **out);$/;"	p
+bcc_transaction_builder_balance_without_fees	bcc.h	/^bcc_transaction_error_t bcc_transaction_builder_balance_without_fees(bcc_transaction_builder *tb, bcc_transaction_coin_diff_t **out);$/;"	p
+bcc_transaction_builder_get_input_total	bcc.h	/^bcc_transaction_error_t bcc_transaction_builder_get_input_total(bcc_transaction_builder *tb, uint64_t *output);$/;"	p
+bcc_transaction_builder_get_output_total	bcc.h	/^bcc_transaction_error_t bcc_transaction_builder_get_output_total(bcc_transaction_builder *tb, uint64_t *output);$/;"	p
+bcc_transaction_builder_finalize	bcc.h	/^bcc_transaction_error_t bcc_transaction_builder_finalize(bcc_transaction_builder *tb, bcc_transaction **tx);$/;"	p
+bcc_transaction_delete	bcc.h	/^void bcc_transaction_delete(bcc_transaction *c_tx);$/;"	p
+bcc_transaction_finalized_new	bcc.h	/^bcc_transaction_finalized * bcc_transaction_finalized_new(bcc_transaction *c_tx);$/;"	p
+bcc_transaction_finalized_delete	bcc.h	/^void bcc_transaction_finalized_delete(bcc_transaction_finalized *tf);$/;"	p
+bcc_transaction_finalized_add_witness	bcc.h	/^bcc_transaction_error_t bcc_transaction_finalized_add_witness(bcc_transaction_finalized *tf, uint8_t c_xprv[96], uint32_t protocol_magic, uint8_t c_txid[32]);$/;"	p
+bcc_transaction_finalized_output	bcc.h	/^bcc_transaction_error_t bcc_transaction_finalized_output(bcc_transaction_finalized *tf, bcc_signed_transaction **txaux);$/;"	p
+bcc_transaction_signed_delete	bcc.h	/^void bcc_transaction_signed_delete(bcc_signed_transaction *txaux);$/;"	p
+bcc_block	bcc.h	/^typedef struct bcc_block bcc_block;$/;"	t	typeref:struct:bcc_block
+bcc_raw_block_decode	bcc.h	/^bcc_result bcc_raw_block_decode(const uint8_t *bytes, size_t size, bcc_block **out_block);$/;"	p
+bcc_block_delete	bcc.h	/^void bcc_block_delete(bcc_block *block);$/;"	p
+bcc_block_get_transactions	bcc.h	/^bcc_result bcc_block_get_transactions($/;"	p
+bcc_block_delete_transactions	bcc.h	/^void bcc_block_delete_transactions($/;"	p
+bcc_block_header	bcc.h	/^typedef struct bcc_block_header bcc_block_header;$/;"	t	typeref:struct:bcc_block_header
+bcc_block_get_header	bcc.h	/^bcc_block_header *bcc_block_get_header(bcc_block *block);$/;"	p
+bcc_raw_block_header_decode	bcc.h	/^bcc_result bcc_raw_block_header_decode($/;"	p
+bcc_block_header_previous_hash	bcc.h	/^char *bcc_block_header_previous_hash(bcc_block_header *header);$/;"	p
+bcc_block_header_compute_hash	bcc.h	/^char *bcc_block_header_compute_hash(bcc_block_header *header);$/;"	p
+bcc_block_delete_hash	bcc.h	/^void bcc_block_delete_hash(char *hash);$/;"	p
+bcc_block_header_delete	bcc.h	/^void bcc_block_header_delete(bcc_block_header *header);$/;"	p

@@ -1,0 +1,13 @@
+[workspace]
+members = [
+    "chain-core",
+    "bcc",
+    "network-core",
+    "network-ntt",
+    "protocol",
+    "protocol-tokio",
+    "storage-units",
+    "storage",
+    "bcc-c",
+    "exe-common",
+]

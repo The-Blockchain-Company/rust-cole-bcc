@@ -1,0 +1,16 @@
+[package]
+name = "storage-units"
+version = "0.1.0"
+authors = ["Robert Mourey Jr <rmourey_jr@blockchain-company.io>", "Original Authors Vincent Hanquez and Nicolas Di Prima of IOHK"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/the-blockchain-company/rust-bcc"
+homepage = "https://github.com/the-blockchain-company/rust-bcc/storage-units#README.md"
+keywords = [ "Storage", "Immutable", "Append", "Git", "FileSystem" ]
+description = """
+blob storage using immutable/append-only files
+"""
+
+[dependencies]
+rand = "0.6"
+cryptoxide = "0.1"

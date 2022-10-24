@@ -1,0 +1,21 @@
+[package]
+name = "bcc-storage"
+version = "0.1.0"
+authors = ["Robert Mourey Jr <rmourey_jr@blockchain-company.io>", "Original Authors Vincent Hanquez and Nicolas Di Prima of IOHK"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/the-blockchain-company/rust-bcc"
+homepage = "https://github.com/the-blockchain-company/rust-bcc/storage#README.md"
+keywords = [ "Bcc", "Storage", "Immutable", "FileSystem" ]
+description = """
+The Bcc storage library. It provides two different levels of functionality; from low level
+fast immutable or append only file without any assumption about the data, to a higher level that is
+intertwined with the Bcc blockchain itself.
+"""
+
+[dependencies]
+bcc = { path = "../bcc" }
+cbor_event = "^2.1.1"
+storage-units = { path = "../storage-units" }
+log = "*"
+rand = "0.6"
